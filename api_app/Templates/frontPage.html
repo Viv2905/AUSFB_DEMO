@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <title>AU Small Finance Bank | Welcome</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="{% static 'android-icon-48x48.png' %}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="icon" type="image/png" sizes="48x48" href="{% static
+    "android-icon-48x48.png" %}">
+
+    <style>
+      html,
+      body {
+        min-height: 100%;
+      }
+      body,
+      div,
+      form,
+      input,
+      select,
+      textarea,
+      label,
+      p {
+        padding: 0;
+        margin: 0;
+        outline: none;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        line-height: 22px;
+      }
+      h1 {
+        position: absolute;
+        margin: 0;
+        font-size: 40px;
+        color: #fff;
+        z-index: 2;
+        line-height: 83px;
+      }
+      textarea {
+        width: calc(100% - 12px);
+        padding: 5px;
+      }
+      .testbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        padding: 20px;
+      }
+      form {
+        width: 100%;
+        padding: 20px;
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 0 8px #669999;
+      }
+      .banner {
+        position: relative;
+        height: 150px;
+        background-color: purple;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .banner::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      input,
+      select,
+      textarea {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      input {
+        width: calc(100% - 10px);
+        padding: 5px;
+      }
+      input[type="date"] {
+        padding: 4px 5px;
+      }
+      textarea {
+        width: calc(100% - 12px);
+        padding: 5px;
+      }
+      .item:hover p,
+      .item:hover i,
+      .question:hover p,
+      .question label:hover,
+      input:hover::placeholder {
+        color: #669999;
+      }
+      .item input:hover,
+      .item select:hover,
+      .item textarea:hover {
+        border: 1px solid transparent;
+        box-shadow: 0 0 3px 0 #669999;
+        color: #669999;
+      }
+      .item {
+        position: relative;
+        margin: 10px 0;
+      }
+      .item span {
+        color: red;
+      }
+      .week {
+        display: flex;
+        justify-content: space-between;
+      }
+      .colums {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .colums div {
+        width: 48%;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+        display: none;
+      }
+      .item i,
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        position: absolute;
+        font-size: 20px;
+        color: #a3c2c2;
+      }
+      .item i {
+        right: 1%;
+        top: 30px;
+        z-index: 1;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        display: none;
+      }
+      label.radio {
+        position: relative;
+        display: inline-block;
+        margin: 5px 20px 15px 0;
+        cursor: pointer;
+      }
+      .question span {
+        margin-left: 30px;
+      }
+      .question-answer label {
+        display: block;
+      }
+      label.radio:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+      }
+      input[type="radio"]:checked + label:before,
+      label.radio:hover:before {
+        border: 2px solid #669999;
+      }
+      label.radio:after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 5px;
+        width: 8px;
+        height: 4px;
+        border: 3px solid #669999;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        opacity: 0;
+      }
+      input[type="radio"]:checked + label:after {
+        opacity: 1;
+      }
+      .flax {
+        display: flex;
+        justify-content: space-around;
+      }
+      .btn-block {
+        margin-top: 10px;
+        text-align: center;
+      }
+      button {
+        width: 150px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #669999;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #a3c2c2;
+      }
+      @media (min-width: 568px) {
+        .name-item,
+        .city-item {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        .name-item input,
+        .name-item div {
+          width: calc(50% - 20px);
+        }
+        .name-item div input {
+          width: 97%;
+        }
+        .name-item div label {
+          display: block;
+          padding-bottom: 5px;
+        }
+      }
+
+      .dropbtn {
+        background-color: #ae08cf;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #ae08cf;
+      }
+
+      /*  Req-Res button effects  */
+      #btn-req,
+      #btn-res,
+      #draw-border {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: -1vh;
+        padding: 10px;
+      }
+
+      #btn-req,
+      #btn-res {
+        border: 0;
+        background: none;
+        text-transform: uppercase;
+        color: #6b008b;
+        background-color: #c89ddb;
+        font-weight: bold;
+        position: relative;
+        outline: none;
+        padding: 10px 20px;
+        box-sizing: border-box;
+      }
+
+      #btn-req::before,
+      #btn-res::before,
+      #btn-req::after,
+      #btn-res::after {
+        box-sizing: inherit;
+        position: absolute;
+        content: "";
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+      }
+
+      #btn-req::after,
+      #btn-res::after {
+        bottom: 0;
+        right: 0;
+      }
+
+      #btn-req::before,
+      #btn-res::before {
+        top: 0;
+        left: 0;
+      }
+
+      #btn-req:hover::before,
+      #btn-res:hover::before {
+        width: 100%;
+        height: 100%;
+      }
+
+      #btn-req:hover::before,
+      #btn-res:hover::before,
+      #btn-req:hover::after,
+      #btn-res:hover::after {
+        border-top-color: #320547;
+        border-right-color: #320547;
+        transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+      }
+
+      #btn-req:hover::after,
+      #btn-res:hover::after {
+        border-bottom-color: #320547;
+        border-left-color: #320547;
+        transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s,
+          height 0.3s ease-out 1s;
+      }
+
+      #admin:hover,
+      #cust:hover {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .flex-container > div {
+        width: 100px;
+        margin: 10px;
+      }
+
+      .glow-on-hover {
+        width: 220px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+      }
+
+      .glow-on-hover:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      .glow-on-hover:active {
+        color: #000;
+      }
+
+      .glow-on-hover:active:after {
+        background: transparent;
+      }
+
+      .glow-on-hover:hover:before {
+        opacity: 1;
+      }
+
+      .glow-on-hover:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+    </style>
+  </head>
+  <!-- <body onload="speak()"> -->
+  <body>
+    <div></div>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          {% comment %}
+          <img
+            src='{% static "AUlogo.png" %}'
+            style="height: 66px; width: 250px"
+          />
+          {% endcomment %}
+          <img
+            src="../static/AU_SMALL_FINANCE_BANK_.webp"
+            alt="..."
+            style="height: 66px; width: 250px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://www.aubank.in/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.aubank.in/">AU0101</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.aubank.in/">Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.aubank.in/">Cards</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.aubank.in/">Retail Loans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.aubank.in/blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://offers.aubank.in/">Offers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="{% static 'pic1.webp' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static 'pic2.webp' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static 'pic3.webp' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!--  class="active my-3 mx-3 draw-border dropdown dropdown-content glow-on-hover"  id="btn-req" -->
+      <ul class="nav justify-content-center">
+        <li class="nav-item mx-3">
+          <button
+            class="my-3 mx-3 glow-on-hover"
+            aria-current="page"
+            href="#"
+            onclick="req_toggle()"
+          >
+            REQUEST
+          </button>
+          <div
+            class="dropdown dropdown-content"
+            id="form1"
+            style="display: none; text-align: center"
+          >
+            <a href="http://127.0.0.1:8000/adm-login/" style>Admin login</a>
+            <a href="http://127.0.0.1:8000/cus-login/">Customer login</a>
+          </div>
+        </li>
+        <li class="nav-item mx-3">
+          <button class="my-3 mx-3 glow-on-hover" onclick="res_toggle()">
+            RESPONSE
+          </button>
+        </li>
+      </ul>
+
+      <!-- On toggling using RESPONSE button -->
+      <div
+        class="testbox"
+        id="form2"
+        style="height: 75%; width: 100%; display: none"
+      >
+        <div class="banner">
+          <h1>Credit_Card OnBoarding</h1>
+        </div>
+        <br />
+        <p class="">
+          <i style="font-size: 12px"
+            >( Fill in the information below for Credit Card Onboarding )</i
+          >
+        </p>
+        <br />
+        <form action="pushdata/" method="post">
+          {% csrf_token %}
+          <div class="colums">
+            <div class="item">
+              <label for="name">First_Name<span>*</span></label>
+              <input id="name" type="text" name="name" required />
+            </div>
+            <div class="item">
+              <label for="eaddress">Last_Name<span>*</span></label>
+              <input id="eaddress" type="text" name="eaddress" required />
+            </div>
+            <div class="item">
+              <label for="phone">Phone<span>*</span></label>
+              <input id="phone" type="tel" name="phone" required />
+            </div>
+            <div class="item">
+              <label for="street">Address<span>*</span></label>
+              <input id="street" type="text" name="street" required />
+            </div>
+            <div class="item">
+              <label for="zip">Amount<span>*</span></label>
+              <input id="zip" type="text" name="zip" required />
+            </div>
+          </div>
+
+          <div class="btn-block">
+            <button type="submit" href="/">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function req_toggle() {
+        const rqst = document.getElementById("form1");
+        const rspnc = document.getElementById("form2");
+
+        rspnc.style.display = "none";
+        if (rqst.style.display == "none") rqst.style.display = "block";
+        else rqst.style.display = "none";
+      }
+
+      function res_toggle() {
+        const rspnc = document.getElementById("form2");
+        const rqst = document.getElementById("form1");
+
+        rqst.style.display = "none";
+        if (rspnc.style.display == "none") rspnc.style.display = "block";
+        else rspnc.style.display = "none";
+      }
+
+      // function speak(){
+      //   var msg = new SpeechSynthesisUtterance();
+      //   msg.text = "Namashkar... Welcome to A U Small Finance Bank";
+      //   window.speechSynthesis.speak(msg);
+      // }
+    </script>
+  </body>
+</html>
